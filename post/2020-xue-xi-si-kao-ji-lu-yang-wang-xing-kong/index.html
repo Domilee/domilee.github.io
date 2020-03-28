@@ -12,15 +12,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://domilee.github.io/favicon.ico?v=1585405140227">
+<link rel="shortcut icon" href="https://domilee.github.io/favicon.ico?v=1585405568748">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://domilee.github.io/styles/main.css">
 
 
   
-
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
   
-    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+
   
 
 
@@ -36,7 +36,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://domilee.github.io">
-        <img class="avatar" src="https://domilee.github.io/images/avatar.png?v=1585405140227" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://domilee.github.io/images/avatar.png?v=1585405568748" alt="" width="32px" height="32px">
       </a>
       <a href="https://domilee.github.io">
         <h1 class="site-title">Li Feng&#39;s Blog</h1>
@@ -119,9 +119,9 @@
 
       
         
-
+          <div id="gitalk-container"></div>
         
-          <div id="disqus_thread"></div>
+
         
       
 
@@ -161,21 +161,24 @@ var app = new Vue({
 
 
   
-
-  
-    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
 
-    var options = {
-      shortname: '',
-      apikey: '',
-    }
-    if ('') {
-      options.api = ''
-    }
-    var dsqjs = new DisqusJS(options)
+      var gitalk = new Gitalk({
+        clientID: '501550f16b04dedd869e',
+        clientSecret: 'aec2f5608e4d74d1bc132e34ece9360bf4f3092f',
+        repo: 'blog comment',
+        owner: 'Domilee',
+        admin: ['Domilee'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
 
     </script>
+  
+
   
 
 
