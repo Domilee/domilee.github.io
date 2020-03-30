@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://domilee.github.io</id>
     <title>Li Feng&apos;s Blog</title>
-    <updated>2020-03-29T01:34:08.634Z</updated>
+    <updated>2020-03-30T16:23:23.872Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://domilee.github.io"/>
     <link rel="self" href="https://domilee.github.io/atom.xml"/>
@@ -10,6 +10,35 @@
     <logo>https://domilee.github.io/images/avatar.png</logo>
     <icon>https://domilee.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Li Feng&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Do Not Go Gentle into That Good Night- Dylan Thomas]]></title>
+        <id>https://domilee.github.io/post/do-not-go-gentle-into-that-good-night-bu-yao-wen-he-di-zou-jin-na-ge-liang-ye/</id>
+        <link href="https://domilee.github.io/post/do-not-go-gentle-into-that-good-night-bu-yao-wen-he-di-zou-jin-na-ge-liang-ye/">
+        </link>
+        <updated>2020-03-30T16:06:52.000Z</updated>
+        <summary type="html"><![CDATA[<p><img src="https://domilee.github.io/post-images/1585585307626.jpg" alt="" loading="lazy"><br>
+Do not go gentle into that good night,<br>
+Old age should burn and rave,<br>
+at close of the day;<br>
+Rage, rage, against the dying of the light.<br>
+……<br>
+不要温和地走进那个良夜，<br>
+老年应当在日暮时燃烧咆哮，<br>
+怒斥，怒斥光明的消散。<br>
+……</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><img src="https://domilee.github.io/post-images/1585585307626.jpg" alt="" loading="lazy"><br>
+Do not go gentle into that good night,<br>
+Old age should burn and rave,<br>
+at close of the day;<br>
+Rage, rage, against the dying of the light.<br>
+……<br>
+不要温和地走进那个良夜，<br>
+老年应当在日暮时燃烧咆哮，<br>
+怒斥，怒斥光明的消散。<br>
+……</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2020, 学习、思考、记录、仰望星空]]></title>
         <id>https://domilee.github.io/post/2020-xue-xi-si-kao-ji-lu-yang-wang-xing-kong/</id>
