@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>读诗 | Li Feng&#39;s Blog</title>
+<title>关于My blog | Li Feng&#39;s Blog</title>
 <meta name="description" content="We are living in the gutter,but some of us are looking at the stars.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,6 +16,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://domilee.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -78,61 +84,34 @@
 
 
       <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">关于My blog</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-04-04</span>
+            
+          </div>
+          <div class="post-content">
+            <p>本人年方30,  坐标上海，90后。孔子说: 三十而立，但至今人一事无成。屡屡受挫后，内心越来越惶恐、焦虑，找不到方向，每天都浑浑噩噩，越来越讨厌自己。</p>
+<p>时常反思，阅读，尝试改变现状，无奈总是陷入三分热度、受挫、停止、反思自责的痛苦循环。也许应该改变观念，或许改变与形成现在的样子需要同样的时间，甚至更长。</p>
+<p>一直有写作博客的想法，2017年买了域名、服务器，在WordPress建了一个站点，维护过一段时间。后来因为主机无法访问，个人网站的尝试就此作罢。接着尝试微信公众号写作，在发了10篇文章后再也没有更新。每次看到关于建了个人网站的消息，还是会点开查看，知道了各个框架：Hexo、Hugo、JKII等等。无奈用这些框架建站，因为需要懂一些代码，会用Git，还是放弃了。直到看到Gridea，这款非常直观的建站工具，尝试了下，目前网站已经可以初步访问。未来还需要多多优化。</p>
+<p>关于个人博客，我受阮一峰的影响比较大。他从2013年开始写博客，涉猎广泛、勤于观察、善于思考、乐于分享。对于技术的关注，对于世界的看法、内容深入浅出，充满人文关怀。在访谈中，他曾说：他的博客首先是知识管理工具，其次才是传播工具。炫耀从来不是写作博客的动力，好奇心才是。</p>
+<p>一直以来，我都没有记笔记的习惯。经历过那些事、遇见哪些人、学习了什么，读了什么书，完全是一团乱麻。久而久之，再往回看时都已经模糊。</p>
+<p>希望在这个博客中书写、记录自己经历的事、遇见的人、读过的书，见证自己的成长。与君共勉！</p>
 
-        <div class="current-tag-container">
-          <h2 class="title">
-            <i class="icon icon-pricetags-outline"></i> 读诗
-          </h2> 
+          </div>
         </div>
 
         
-<section class="post-item">
-    <div class="content">
-      <a href="https://domilee.github.io/post/do-not-go-gentle-into-that-good-night-bu-yao-wen-he-di-zou-jin-na-ge-liang-ye/">
-        <h2 class="post-title">Do Not Go Gentle into That Good Night- Dylan Thomas</h2>
-      </a>
-      <div class="post-abstract">
-        <p>Do not go gentle into that good night,<br>
-Old age should burn and rave,<br>
-at close of the day;<br>
-Rage，rage ,against the dying of the light.<br>
-……<br>
-不要温和地走进那个良夜，<br>
-老年应当在日暮时燃烧咆哮,<br>
-怒斥，怒斥光明的消逝</p>
-
       </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2020-03-31</span>
+
+      
         
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://domilee.github.io/tag/reading poem/">
-                读诗
-                
-              </a>
-            
-          </span>
+          <div id="gitalk-container"></div>
         
-      </div>
-    </div>
-    
-      <a href="https://domilee.github.io/post/do-not-go-gentle-into-that-good-night-bu-yao-wen-he-di-zou-jin-na-ge-liang-ye/">
-        <div class="feature-container" style="background-image: url('https://domilee.github.io/post-images/do-not-go-gentle-into-that-good-night-bu-yao-wen-he-di-zou-jin-na-ge-liang-ye.jpg')">
-        </div>
-      </a>
-    
-  </section>
 
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
+        
+      
 
       <div class="site-footer">
   <div class="slogan">We are living in the gutter,but some of us are looking at the stars.</div>
@@ -166,6 +145,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '501550f16b04dedd869e',
+        clientSecret: 'aec2f5608e4d74d1bc132e34ece9360bf4f3092f',
+        repo: 'blog comment',
+        owner: 'Domilee',
+        admin: ['Domilee'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
