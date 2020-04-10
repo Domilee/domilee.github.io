@@ -1,168 +1,176 @@
+
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8"/>
-<meta name="description" content=""/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <head>
+    
+<meta charset="utf-8" >
+
 <title>关于My blog | Li Feng&#39;s Blog</title>
-<link rel="shortcut icon" href="https://domilee.github.io/favicon.ico?v=1586013088901">
-<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<meta name="description" content="We are living in the gutter,but some of us are looking at the stars.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://domilee.github.io/favicon.ico?v=1586539687699">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://domilee.github.io/styles/main.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
 
-<!-- DEMO JS -->
-<script src="media/scripts/index.js"></script>
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-</head>
-<body>
-<div class="main gt-bg-theme-color-first">
-    <nav class="navbar navbar-expand-lg">
-    <div class="navbar-brand">
-        <img class="user-avatar" src="/images/avatar.png" alt="头像">
-        <div class="site-name gt-c-content-color-first">
-            Li Feng&#39;s Blog
-        </div>
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://domilee.github.io">
+        <img class="avatar" src="https://domilee.github.io/images/avatar.png?v=1586539687699" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://domilee.github.io">
+        <h1 class="site-title">Li Feng&#39;s Blog</h1>
+      </a>
     </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center">
-            
-                <div class="nav-item">
-                    
-                        <a href="/" class="menu gt-a-link">
-                            首页
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="/archives" class="menu gt-a-link">
-                            归档
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="/tags" class="menu gt-a-link">
-                            标签
-                        </a>
-                    
-                </div>
-            
-                <div class="nav-item">
-                    
-                        <a href="https://domilee.github.io/post/guan-yu-my-blog" class="menu gt-a-link">
-                            关于
-                        </a>
-                    
-                </div>
-            
-        </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
     </div>
-</nav>
-    <div class="post-container">
-        <div class="post-detail gt-bg-theme-color-second">
-            <article class="gt-post-content">
-                <h2 class="post-title">
-                    关于My blog
-                </h2>
-                <div class="post-info">
-                    <time class="post-time gt-c-content-color-first">
-                        · 2020-04-04 ·
-                    </time>
-                    
-                </div>
-                <div class="post-content">
-                    <p>本人年方30,  坐标上海，90后。孔子说: 三十而立。但至今人一事无成。屡屡受挫后，内心越来越惶恐、焦虑，找不到方向，每天都浑浑噩噩，越来越讨厌自己。</p>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://domilee.github.io/post/guan-yu-my-blog" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">关于My blog</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-04-04</span>
+            
+          </div>
+          <div class="post-content">
+            <p>本人年方30,  坐标上海，90后。孔子说: 三十而立。但至今人一事无成。屡屡受挫后，内心越来越惶恐、焦虑，找不到方向，每天都浑浑噩噩，越来越讨厌自己。</p>
 <p>时常反思，阅读，尝试改变现状，无奈总是陷入三分热度、受挫、停止、反思自责的痛苦循环。也许应该改变观念，或许改变与形成现在的样子需要同样的时间，甚至更长。</p>
 <p>一直有写作博客的想法，2017年买了域名、服务器，在WordPress建了一个站点，维护过一段时间。后来因为主机无法访问，个人网站的尝试就此作罢。接着尝试微信公众号写作，在发了10篇文章后再也没有更新。每次看到关于建了个人网站的消息，还是会点开查看，知道了各个框架：Hexo、Hugo、JKII等等。无奈用这些框架建站，因为需要懂一些代码，会用Git，还是放弃了。直到看到Gridea，这款非常直观的建站工具，尝试了下，目前网站已经可以初步访问。未来还需要多多优化。</p>
 <p>关于个人博客，我受阮一峰的影响比较大。他从2013年开始写博客，涉猎广泛、勤于观察、善于思考、乐于分享。对于技术的关注，对于世界的看法、内容深入浅出，充满人文关怀。在访谈中，他曾说：他的博客首先是知识管理工具，其次才是传播工具。炫耀从来不是写作博客的动力，好奇心才是。</p>
 <p>一直以来，我都没有记笔记的习惯。经历过那些事、遇见哪些人、学习了什么，读了什么书，完全是一团乱麻。久而久之，再往回看时都已经模糊。</p>
 <p>希望在这个博客中书写、记录自己经历的事、遇见的人、读过的书，见证自己的成长。与君共勉！</p>
 
-                </div>
-            </article>
+          </div>
         </div>
 
         
+      </div>
 
+      
         
-            
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: '501550f16b04dedd869e',
-    clientSecret: 'aec2f5608e4d74d1bc132e34ece9360bf4f3092f',
-    repo: 'blog comment',
-    owner: 'Domilee',
-    admin: ['Domilee'],
-    id: location.pathname,      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
-            
-
-            
+          <div id="gitalk-container"></div>
         
 
-        <div class="site-footer gt-c-content-color-first">
-    <div class="slogan gt-c-content-color-first">We are living in the gutter,but some of us are looking at the stars.</div>
-    <div class="social-container">
         
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    </div>
-     | <a href="https://domilee.github.io/atom.xml" target="_blank">RSS</a>
+      
+
+      <div class="site-footer">
+  <div class="slogan">We are living in the gutter,but some of us are looking at the stars.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+   | <a class="rss" href="https://domilee.github.io/atom.xml" target="_blank">RSS</a>
 </div>
-
-<script>
-    hljs.initHighlightingOnLoad()
-</script>
 
 
     </div>
-</div>
-</body>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '501550f16b04dedd869e',
+        clientSecret: 'aec2f5608e4d74d1bc132e34ece9360bf4f3092f',
+        repo: 'blog comment',
+        owner: 'Domilee',
+        admin: ['Domilee'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
 </html>
